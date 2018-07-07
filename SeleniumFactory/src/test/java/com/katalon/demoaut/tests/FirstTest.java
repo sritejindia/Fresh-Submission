@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class FirstTest {
 
     public WebDriver driver = null;
+    private final String screenshotsPath = "my-reports";
 
     @Before
     public void beforeMethod() {
@@ -61,7 +62,7 @@ public class FirstTest {
         System.out.println("The hospital readmission is: " + driver.findElement(By.id("hospital_readmission")).getText());
         System.out.println("The program chosen is: " + driver.findElement(By.id("program")).getText());
         System.out.println("Your comments are: " + driver.findElement(By.id("comment")).getText());
-        CommonFunctions.takeScreenshot(driver,"my-reports");
+        CommonFunctions.takeScreenshot(driver,screenshotsPath);
         driver.findElement(By.id("menu-toggle")).click();
         driver.findElement(By.linkText("Logout")).click();
 

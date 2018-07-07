@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class CommonFunctions {
 
@@ -26,6 +27,7 @@ public class CommonFunctions {
     }
 
     public static String getCurrentTime() {
-        return LocalTime.now().toString();
+        return LocalTime.now().format(DateTimeFormatter.ofPattern("HHmmSS"));
+
     }
 }
