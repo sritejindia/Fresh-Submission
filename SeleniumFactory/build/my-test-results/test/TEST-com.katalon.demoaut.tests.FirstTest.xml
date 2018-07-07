@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.katalon.demoaut.tests.FirstTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-07T09:56:11" hostname="Sritejs-MacBook-Air.local" time="4.523">
+<testsuite name="com.katalon.demoaut.tests.FirstTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-07T12:35:03" hostname="Sritejs-MacBook-Air.local" time="22.338">
   <properties/>
-  <testcase name="checkLoginSuccessfully" classname="com.katalon.demoaut.tests.FirstTest" time="4.523"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Jul 07, 2018 3:26:13 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+  <testcase name="checkLoginSuccessfully" classname="com.katalon.demoaut.tests.FirstTest" time="22.338"/>
+  <system-out><![CDATA[The facility chosen is: Hongkong CURA Healthcare Center
+The hospital readmission is: Yes
+The program chosen is: Medicare
+Your comments are: Thus made an appointment
+]]></system-out>
+  <system-err><![CDATA[Jul 07, 2018 6:05:05 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 ]]></system-err>
 </testsuite>
