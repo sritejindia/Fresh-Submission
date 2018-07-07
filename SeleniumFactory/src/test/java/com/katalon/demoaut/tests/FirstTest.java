@@ -1,5 +1,6 @@
 package com.katalon.demoaut.tests;
 
+import com.katalon.demoaut.functions.CommonFunctions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -60,6 +61,7 @@ public class FirstTest {
         System.out.println("The hospital readmission is: " + driver.findElement(By.id("hospital_readmission")).getText());
         System.out.println("The program chosen is: " + driver.findElement(By.id("program")).getText());
         System.out.println("Your comments are: " + driver.findElement(By.id("comment")).getText());
+        CommonFunctions.takeScreenshot(driver,"my-reports");
         driver.findElement(By.id("menu-toggle")).click();
         driver.findElement(By.linkText("Logout")).click();
 
