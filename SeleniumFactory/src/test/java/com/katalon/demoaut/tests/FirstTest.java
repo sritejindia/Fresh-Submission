@@ -4,23 +4,48 @@ import com.katalon.demoaut.functions.CommonFunctions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+
+@RunWith(Parameterized.class)
 public class FirstTest {
+
+    private final String username;
+    private final String password;
 
     public WebDriver driver = null;
     private final String screenshotsPath = "my-reports";
+
+    public FirstTest(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    @Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][] {
+                { "John Doe", "ThisIsNotAPassword" }
+        });
+    }
+
 
     @Before
     public void beforeMethod() {
         driver = new SafariDriver();
         driver.manage().window().maximize();
     }
+
 
     @Test
     public void checkLoginSuccessfully() {
@@ -40,8 +65,11 @@ public class FirstTest {
         //System.out.println("The password is: " + driver.findElement(By.cssSelector("div.alert-info input[placeholder='Password']")).getAttribute("value"));
         //System.out.println("The page source is: " + driver.getPageSource());
 
-        driver.findElement(By.id("txt-username")).sendKeys(driver.findElement(By.cssSelector("div.alert-info input[placeholder='Username']")).getAttribute("value"));
-        driver.findElement(By.id("txt-password")).sendKeys(driver.findElement(By.cssSelector("div.alert-info input[placeholder='Password']")).getAttribute("value"));
+       // driver.findElement(By.id("txt-username")).sendKeys(driver.findElement(By.cssSelector("div.alert-info input[placeholder='Username']")).getAttribute("value"));
+        //driver.findElement(By.id("txt-password")).sendKeys(driver.findElement(By.cssSelector("div.alert-info input[placeholder='Password']")).getAttribute("value"));
+
+        driver.findElement(By.id("txt-username")).sendKeys(username);
+        driver.findElement(By.id("txt-password")).sendKeys(password);
         driver.findElement(By.id("btn-login")).click();
 
         webDriverWait = new WebDriverWait(driver,10);
