@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 public class CommonFunctions {
 
@@ -29,5 +30,9 @@ public class CommonFunctions {
     public static String getCurrentTime() {
         return LocalTime.now().format(DateTimeFormatter.ofPattern("HHmmSS"));
 
+    }
+
+    public static int getRandomNumber() {
+        return  new Random().nextInt(1000000);
     }
 }

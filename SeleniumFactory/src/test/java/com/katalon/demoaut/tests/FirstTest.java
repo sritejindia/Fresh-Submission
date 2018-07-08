@@ -65,7 +65,6 @@ public class FirstTest {
         CommonFunctions.takeScreenshot(driver,screenshotsPath);
         driver.findElement(By.id("menu-toggle")).click();
         driver.findElement(By.linkText("Logout")).click();
-
     }
 
     @After
