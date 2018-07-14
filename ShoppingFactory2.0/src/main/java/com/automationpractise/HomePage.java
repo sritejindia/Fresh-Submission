@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,11 +24,14 @@ public class HomePage {
 
     public HomePage launcHomePage() {
         driver.get("http://automationpractice.com");
-        return this;
+        return new HomePage(driver);
     }
 
     public LoginPage clickOnSignInBtn() {
-        signInLink.click();
+    WebDriverWait driverWait =    new WebDriverWait(driver,20);
+    driverWait.until(ExpectedConditions.elementToBeClickable(signInLink)).clear();
+
+
         return new LoginPage(driver);
     }
 }

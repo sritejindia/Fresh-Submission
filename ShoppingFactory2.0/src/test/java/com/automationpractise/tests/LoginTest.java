@@ -19,7 +19,12 @@ public class LoginTest {
 
     @Test
     public void testLogin() {
-        new HomePage(driver).launcHomePage().clickOnSignInBtn().enterCreateAccountEmailAddress("sritej@test2.com").clickCreateAcctBtn();
+        new HomePage(driver)
+                .launcHomePage()
+                    .clickOnSignInBtn()
+                        .enterCreateAccountEmailAddress("sritej@test2.com")
+                            .clickCreateAcctBtn()
+                                .selectTitle("Mrs.");
     }
 
     @AfterTest
