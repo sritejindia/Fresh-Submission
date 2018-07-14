@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.automationpractise.tests.VerifyLogin" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-14T11:25:17" hostname="Sritejs-MacBook-Air.local" time="0.015">
+  <properties/>
+  <testcase name="test" classname="com.automationpractise.tests.VerifyLogin" time="0.015"/>
+  <system-out><![CDATA[The gradle properties are: value
+The document title is: My Store
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

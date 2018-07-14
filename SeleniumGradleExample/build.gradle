@@ -1,0 +1,37 @@
+apply plugin: 'java'
+
+//selenium-server-standalone-3.12.0.jar
+
+dependencies {
+    //compile files('src/main/resources/selenium-server-standalone-3.12.0.jar')
+    compile fileTree(dir: 'src/main/resources', include: '*.jar')
+    testCompile fileTree(dir: 'src/test/resources', include: '*.jar')
+	//testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+}
+
+test {
+	useTestNG()
+	testLogging.showStandardStreams = true
+
+  // set heap size for the test JVM(s)
+	  //minHeapSize = "128m"
+	  //maxHeapSize = "512m"
+    systemProperty 'some.prop', 'value'
+
+
+    //include "com/automationpractise/tests"
+
+	  // listen to events in the test execution lifecycle
+	  beforeTest { descriptor ->
+	     logger.lifecycle("Running test: " + descriptor)
+	  }
+
+	  // Fail the 'test' task on the first test failure
+	  failFast = true
+
+	  // listen to standard out and standard error of the test JVM(s)
+	  onOutput { descriptor, event ->
+	     logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
+	  }
+
+}
