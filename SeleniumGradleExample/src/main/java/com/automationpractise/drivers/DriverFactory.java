@@ -8,9 +8,14 @@ public class DriverFactory {
     private static WebDriver mDriver;
 
     public synchronized static WebDriver getCurrentDriver() {
-        if(mDriver == null) {
-         mDriver = new SafariDriver(new SafariOptions());
+        if (mDriver == null) {
+            mDriver = new SafariDriver(new SafariOptions());
         }
         return mDriver;
+    }
+
+    public static void closeCurrentBrowser() {
+        getCurrentDriver().quit();
+        mDriver = null;
     }
 }
