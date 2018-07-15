@@ -10,8 +10,8 @@ public class Locator {
     public static final String createAccountBtn_id = "SubmitCreate";
 
     // Create Account page locators
-    public static final String title_radio_mr_css = "input[type='radio'][value='1']";
-    public static final String title_radio_mrs_css = "input[type='radio'][value='2']";
+    public static final String title_radio_mr_css = "div.radio#uniform-id_gender1";
+    public static final String title_radio_mrs_css = "div.radio#uniform-id_gender2";
     public static final String customer_firstname_id = "customer_firstname";
     public static final String customer_lastname_id = "customer_lastname";
     public static final String password_id = "passwd";

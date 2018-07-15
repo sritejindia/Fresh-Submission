@@ -25,7 +25,9 @@ public class CommonOperations {
     protected void clickElement(By by) {
         WebDriverWait webDriverWait;
         webDriverWait = new WebDriverWait(DriverFactory.getCurrentDriver(), 20);
-        webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+        //System.out.println(DriverFactory.getCurrentDriver().getPageSource());
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(by));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).click();
     }
 
@@ -39,7 +41,7 @@ public class CommonOperations {
     }
 
     protected void waitForPageLoad() {
-        new WebDriverWait(DriverFactory.getCurrentDriver(), 20).until(
+        new WebDriverWait(DriverFactory.getCurrentDriver(), 30).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 

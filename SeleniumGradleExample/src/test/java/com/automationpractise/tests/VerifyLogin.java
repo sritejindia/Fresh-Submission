@@ -4,12 +4,14 @@ import com.automationpractise.drivers.DriverFactory;
 import com.automationpractise.pages.HomePage;
 import org.testng.annotations.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 public class VerifyLogin {
 
     @BeforeClass
     public static void beforeClass() {
-
     }
 
     @AfterClass
@@ -26,7 +28,11 @@ public class VerifyLogin {
         new HomePage(DriverFactory.getCurrentDriver())
                 .clickSignInHyperlink()
                 .enterCreateAccountEmailAddress("sritejindia@gmail.com")
-                .clickCreateAccountButton();
+                .clickCreateAccountButton()
+                .selectTitle("Mr.")
+                .enterName("sritej", "kurapati")
+                .enterPassword("trisha!@#")
+                .enterDOB(LocalDate.parse("19/07/1992", DateTimeFormatter.ofPattern("dd/MM/yyyy")));
     }
 
     @AfterTest
