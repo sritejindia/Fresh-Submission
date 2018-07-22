@@ -29,4 +29,14 @@ public class AuthenticationPage extends CommonOperations {
         clickElement(By.id(Locator.createAccountBtn_id));
         return new CreateAccountPage(DriverFactory.getCurrentDriver());
     }
+
+    public AuthenticationPage enterEmailAddressAndPassword(String email, String password) {
+        populateElement(By.id(Locator.login_email_address_id), email);
+        populateElement(By.id(Locator.login_pass_id), password);
+        return this;
+    }
+
+    public LoggedInHomePage clickOnLoginBtn() {
+        return new LoggedInHomePage(DriverFactory.getCurrentDriver());
+    }
 }

@@ -54,4 +54,9 @@ public class CommonOperations {
         Select selectDropdown = new Select(DriverFactory.getCurrentDriver().findElement(by));
         selectDropdown.selectByVisibleText(value);
     }
+
+    protected void selectDropdownValueByValue(By by, String value) {
+        Select selectDropdown = new Select(DriverFactory.getCurrentDriver().findElement(by));
+        selectDropdown.selectByValue(value);
+    }
 }
